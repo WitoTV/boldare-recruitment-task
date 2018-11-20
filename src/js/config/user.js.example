@@ -1,0 +1,22 @@
+const user = {
+	'name': 'Harvey Specter', // If not provided defaults to 'Anonymous'
+	'location': 'New York, USA', // If not provided location is not displayed
+	'avatar': '', // If not provided defaults to placeholder image
+	'stats': {
+		'likes': 121, // If not provided defaults to 0
+		'followers': 723, // If not provided defaults to 0
+		'following': 4433 // If not provided defaults to 0
+	},
+	'comments': [
+		{
+			'user': {
+				'name': 'Mike Ross', // If not provided defaults to 'Anonymous'
+				'avatar': ''  // If not provided defaults to placeholder image
+			},
+			'date': '', // If not provided defaults to today
+			'comment': '' // If not provided comment is not going to display
+		}
+	]
+}
+
+export default user;

@@ -1,0 +1,6 @@
+task-files
+node_modules
+yarn-error.log
+dist/js/*.js
+dist/css/*.css
+src/js/config/user.js
