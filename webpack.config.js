@@ -65,7 +65,9 @@ module.exports = {
 	'resolve': {
 		'extensions': ['.js', '.jsx', '.json', '.scss', '.css'],
 		'alias': {
-			'scss': path.resolve(__dirname, 'src/scss/')
+			'scss': path.resolve(__dirname, 'src/scss/'),
+			'global': path.resolve(__dirname, 'src/js/global'),
+			'config': path.resolve(__dirname, 'src/js/config'),
 		}
 	},
 	'optimization': {
