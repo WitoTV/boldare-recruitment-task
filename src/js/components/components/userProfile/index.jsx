@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
 		const template = (
 			<div className={'user-profile'}>
 				<Details/>
+				<Comments />
 			</div>
 		);
 		return template;

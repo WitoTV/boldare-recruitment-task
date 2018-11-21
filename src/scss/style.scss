@@ -15,3 +15,35 @@ body {
 	justify-content: center;
 	padding-top: 20px;
 }
+
+.ps {
+	position: relative;
+	&__rail {
+		&-x, &-y {
+			position: absolute;
+			background-color: rgba(216, 216, 216, .3);
+			border-radius: 100px;
+		}
+		&-x {
+			height: 5px;
+			bottom: 8px !important;
+		}
+		&-y {
+			width: 5px;
+			right: 8px !important;
+		}
+	}
+	&__thumb {
+		&-x, &-y {
+			position: absolute;
+			background-color: rgba(0, 44, 113, .12);
+			border-radius: 100px;
+		}
+		&-x {
+			height: 5px;
+		}
+		&-y {
+			width: 5px;
+		}
+	}
+}

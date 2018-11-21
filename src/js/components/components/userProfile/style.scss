@@ -26,7 +26,8 @@
 	&__details, &__comments {
 		border-radius: 5px;
 		box-shadow: 0 0 4px 0 $box-shadow-color;
-		padding: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
 		margin-left: 20px;
 		margin-right: 20px;
 		background-color: rgb(255, 255, 255);
@@ -34,6 +35,8 @@
 		position: relative;
 	}
 	&__details {
+		padding-left: 20px;
+		padding-right: 20px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -156,5 +159,69 @@
 	}
 	&__comments {
 		margin-top: 10px;
+	}
+	&__toggle-comments {
+		text-align: center;
+		color: $secondary-color;
+		text-decoration: underline;
+		cursor: pointer;
+		font-size: 14px;
+		margin-left: 20px;
+		margin-right: 20px;
+		@media screen and (min-width: 540px) {
+			text-align: left;
+		}
+	}
+	&__comments-list {
+		transition: height 300ms ease;
+		height: 480px;
+		margin-top: 30px;
+		overflow: hidden;
+		position: relative;
+	}
+	&__single-comment {
+		display: flex;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-top: 1px solid #EBEBEB;
+		padding-left: 20px;
+		margin-right: 20px;
+		@media screen and (min-width: 540px) {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&:first-of-type {
+			border-top: 0;
+			padding-top: 0;
+		}
+		.single-comment {
+			&__avatar {
+				margin-right: 11px;
+				max-width: 40px;
+				height: 40px;
+				flex: 0 0 40px;
+				border-radius: 50%;
+				background-position: center;
+				background-size: cover;
+			}
+			&__user {
+				color: $primary-color;
+				margin-bottom: 6px;
+				margin-top: 10px;
+			}
+			&__comment {
+				font-size: 14px;
+				color: #444444;
+				letter-spacing: 0;
+				line-height: 21px;
+			}
+			&__date {
+				font-size: 14px;
+				text-align: center;
+				margin-left: auto;
+				opacity: .5;
+				color: $primary-color;
+			}
+		}
 	}
 }

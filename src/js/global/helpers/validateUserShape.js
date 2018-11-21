@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import moment from 'moment';
 
 const validateUserShape = (user) => {
 	const shape = yup.object().shape({
@@ -16,7 +17,7 @@ const validateUserShape = (user) => {
 					'name': yup.string().default('Anonymous'),
 					'avatar': yup.string().transform((value) => !value ? 'img/placeholder-avatar.jpg' : value ).default('img/placeholder-avatar.jpg'),
 				}),
-				//'date': yup.date().default(() => new Date),
+				'date': yup.mixed().transform((value) => moment(!value ? new Date : value)).default(() => moment(new Date)),
 				'comment': yup.string().default('')
 			})
 		).default([])
