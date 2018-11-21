@@ -1,3 +1,17 @@
 @import './variables';
-
 @import '~reset-css';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&subset=latin-ext');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+}
