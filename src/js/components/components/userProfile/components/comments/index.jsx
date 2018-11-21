@@ -23,6 +23,15 @@ class Comments extends React.Component {
 		this.scrollbar.update();
 	}
 
+	addComment(e, saveContext) {
+		e.preventDefault();
+		const data = new FormData(e.target);
+		if(!!data.get('comment')) {
+			saveContext(data.get('comment'));
+			e.target.reset();
+		}
+	}
+
 	render() {
 		const {commentsVisible} = this.state;
 		const template = (
@@ -44,9 +53,8 @@ class Comments extends React.Component {
 									<div className={'single-comment__date'}>{moment(comment.date).fromNow(true)}</div>
 								</article>
 							))}
-							<form onSubmit={(e) => {e.preventDefault(); addComment('This is test')}}>
-								<input type={'text'} name={'comment'} />
-								<button type={'submit'}>Test</button>
+							<form className={'user-profile__add-comment'} onSubmit={(e) => {this.addComment(e, addComment)}}>
+								<input autoComplete={'off'} placeholder={'Add a comment'} type={'text'} name={'comment'} />
 							</form>
 						</div>
 					</div>

@@ -173,7 +173,7 @@
 		}
 	}
 	&__comments-list {
-		transition: height 300ms ease;
+		transition: height 300ms ease, margin-top 300ms ease;
 		height: 480px;
 		margin-top: 30px;
 		overflow: hidden;
@@ -183,7 +183,7 @@
 		display: flex;
 		padding-top: 20px;
 		padding-bottom: 20px;
-		border-top: 1px solid #EBEBEB;
+		border-top: 1px solid rgb(234, 234, 234);
 		padding-left: 20px;
 		margin-right: 20px;
 		@media screen and (min-width: 540px) {
@@ -211,7 +211,7 @@
 			}
 			&__comment {
 				font-size: 14px;
-				color: #444444;
+				color: rgb(68, 68, 68);
 				letter-spacing: 0;
 				line-height: 21px;
 			}
@@ -221,6 +221,25 @@
 				margin-left: auto;
 				opacity: .5;
 				color: $primary-color;
+			}
+		}
+	}
+	&__add-comment {
+		padding-left: 20px;
+		padding-right: 20px;
+		input {
+			color: rgb(68, 68, 68);
+			font-size: 18px;
+			line-height: 22px;
+			background-color: transparent;
+			border: 0;
+			border-bottom: 2px solid rgb(219, 224, 232);
+			box-shadow: 0;
+			width: 100%;
+			height: 50px;
+			outline: 0;
+			&::placeholder {
+				color:rgb(130, 152, 185)
 			}
 		}
 	}
