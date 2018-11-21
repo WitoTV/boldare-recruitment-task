@@ -43,16 +43,20 @@ class Comments extends React.Component {
 							{`${commentsVisible ? 'Hide' : 'Show'} comments (${user.comments.length})`}
 						</div>
 						<div style={{marginTop: !commentsVisible && 0, height: !commentsVisible && 0 }} ref={(node) => this.scrollbarContainer = node} className={'user-profile__comments-list'}>
-							{user.comments.map((comment) => (
-								<article className={'user-profile__single-comment single-comment'}>
-									<figure style={{backgroundImage: `url(${comment.user.avatar})`}}  className={'single-comment__avatar'}></figure>
-									<div className={'single-comment__comment'}>
-										<div className={'single-comment__user'}>{comment.user.name}</div>
-										{comment.comment}
-									</div>
-									<div className={'single-comment__date'}>{moment(comment.date).fromNow(true)}</div>
-								</article>
-							))}
+							{user.comments.map((comment) => {
+								if (!!comment.comment) {
+									return (
+										<article className={'user-profile__single-comment single-comment'}>
+											<figure style={{backgroundImage: `url(${comment.user.avatar})`}}  className={'single-comment__avatar'}></figure>
+											<div className={'single-comment__comment'}>
+												<div className={'single-comment__user'}>{comment.user.name}</div>
+												{comment.comment}
+											</div>
+											<div className={'single-comment__date'}>{moment(comment.date).fromNow(true)}</div>
+										</article>
+									);
+								}
+							})}
 							<form className={'user-profile__add-comment'} onSubmit={(e) => {this.addComment(e, addComment)}}>
 								<input autoComplete={'off'} placeholder={'Add a comment'} type={'text'} name={'comment'} />
 							</form>
