@@ -11,7 +11,7 @@ class Info extends React.Component {
 						<figure style={{backgroundImage: `url(${user.avatar})`}} className={'user-profile__avatar'} />
 						<div>
 							<h1>{user.name} <i onClick={addLike}><EvaSvg icon={'heart-outline'} /></i></h1>
-							<span>{user.location}</span>
+							{!!user.location && <span>{user.location}</span>}
 						</div>
 					</div>
 				)}
